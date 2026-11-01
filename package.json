@@ -1,0 +1,19 @@
+{
+  "name": "product-authenticity-tracker",
+  "version": "1.0.0",
+  "description": "Blockchain product registration and verification project",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "truffle test --network development",
+    "contract:build": "truffle compile && truffle migrate --reset --network development && node scripts/copy-contract.js"
+  },
+  "devDependencies": {
+    "html5-qrcode": "^2.2.0",
+    "lite-server": "2.6"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.15",
+    "cors": "^2.8.5"
+  }
+}
