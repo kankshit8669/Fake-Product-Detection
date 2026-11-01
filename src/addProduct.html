@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Product Verify | Blockchain Project</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css"/>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/qr_code_box.css" rel="stylesheet"/>
+<link href="css/project.css" rel="stylesheet"/>
+</head>
+<body><nav class="project-nav"><a class="project-brand" href="index.html">PRODUCT<span>VERIFY</span></a><div class="project-links"><a href="index.html">Home</a><a href="manufacturer.html">Manufacturer</a><a href="seller.html">Seller</a><a href="consumer.html">Consumer</a><a href="confirmPurchase.html">Confirm Purchase</a></div></nav><header class="project-heading"><p class="eyebrow">BLOCKCHAIN PRODUCT RECORDS</p><h1>Register a product</h1><p class="project-lead">Add a unique serial number to the blockchain.</p></header>
+<div aria-live="polite" class="status-message" id="statusMessage" role="status"></div>
+
+<section>
+<div class="container">
+<h2>Add Product</h2>
+<div class="matrix">
+<table width="100%">
+<tr width="100%">
+<td align="center" width="15%">
+<label for="manufacturerID">Manufacturer ID</label>
+</td>
+<td width="30%">
+<input class="form-control" id="manufacturerID" name="Manufacturer ID" type="text"/>
+</td>
+<td align="center" width="15">
+<label for="name">Product Name</label>
+</td>
+<td width="30%">
+<input class="form-control" id="productName" name="productName" type="text"/>
+</td>
+</tr>
+<tr width="100%">
+<td align="center" width="15%">
+<label for="productSN">Product SN:</label>
+</td>
+<td width="30%">
+<input class="form-control" id="productSN" name="productSN" type="text"/>
+</td>
+<td align="center" width="15">
+<label for="name">Product Brand</label>
+</td>
+<td width="30%">
+<input class="form-control" id="productBrand" name="productBrand" type="text"/>
+</td>
+</tr>
+<tr width="100%">
+<td align="center" width="15%">
+<label for="productPrice">Product Price</label>
+</td>
+<td width="30%">
+<input class="form-control" id="productPrice" name="productPrice" type="text"/>
+</td>
+</tr>
+
+</table>
+</div>
+<div class="clear"> </div>
+<div align="center">
+<button class="btn btn-warning btn-register" id="register" type="submit">Add the Product</button>
+</div>
+<br/>
+</div>
+</section>
+<!-- <br></br>	 -->
+<div class="qr-code">
+<div align="center">
+<img align="center" alt="qr-code" hidden="" id="imgQR" src=""/>
+</div>
+<br/>
+<div align="center">
+<button align="center" class="btn btn-warning" hidden="" id="download" onclick="saveImage()" type="submit">Download QR Code</button>
+</div>
+</div>
+<br/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/chainConnection.js"></script>
+<script src="js/registerProduct.js"></script>
+<script src="js/localQR.js"></script>
+<script>
+	var qrImageUrl = '';
+    var qrFileName = '';
+    function fetchQR() {
+        qrFileName = document.getElementById('productSN').value.trim();
+        if (!qrFileName) return;
+        qrImageUrl = LocalQR.toDataURL(qrFileName);
+        document.getElementById('imgQR').src = qrImageUrl;
+        document.getElementById('imgQR').hidden = false;
+        document.getElementById('download').hidden = false;
+    }
+    function saveImage() {
+        if (!qrImageUrl) return;
+        var link = document.createElement('a');
+        link.href = qrImageUrl;
+        link.download = qrFileName + '.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('productSN').addEventListener('change', fetchQR);
+    });
+
+	</script>
+</body>
+</html>

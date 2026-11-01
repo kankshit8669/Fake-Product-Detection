@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Product Verify | Blockchain Project</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css"/>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/project.css" rel="stylesheet"/>
+</head>
+<body><nav class="project-nav"><a class="project-brand" href="index.html">PRODUCT<span>VERIFY</span></a><div class="project-links"><a href="index.html">Home</a><a href="manufacturer.html">Manufacturer</a><a href="seller.html">Seller</a><a href="consumer.html">Consumer</a><a href="confirmPurchase.html">Confirm Purchase</a></div></nav><header class="project-heading"><p class="eyebrow">BLOCKCHAIN PRODUCT RECORDS</p><h1>Assign a product</h1><p class="project-lead">Transfer a registered product to an approved seller.</p></header>
+<div aria-live="polite" class="status-message" id="statusMessage" role="status"></div>
+
+<section>
+<div class="container">
+<h2>Sell Product to Seller</h2>
+<section>
+<div class="container-fluid">
+<center>
+<div id="qr-reader" style="width:300px"></div>
+<div id="qr-reader-results"></div>
+</center>
+</div>
+</section>
+<div>
+<table width="100%">
+<tr width="100%">
+<td align="center" width="15">
+<label for="productSN">Product SN:</label>
+</td>
+<td width="30%">
+<input class="form-control" disabled="" id="productSN" name="productSN" type="text"/>
+</td>
+<td align="center" width="15%">
+<label for="sellerCode">Seller Code</label>
+</td>
+<td width="30%">
+<input class="form-control" id="sellerCode" name="sellerCode" type="text"/>
+</td>
+</tr>
+
+</table>
+</div>
+<div class="clear"> </div>
+<button class="btn btn-warning btn-register" id="register" type="submit">Sell to Seller</button>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/chainConnection.js"></script>
+<script src="js/assignProductToSeller.js"></script>
+<script src="https://unpkg.com/html5-qrcode@2.3.8"></script>
+<script>
+	var decodedText = "Enter Product SN";
+     function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete"
+           || document.readyState === "interactive") {
+	        // call on next available tick
+           setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    } 
+
+    docReady(function () {
+        var resultContainer = document.getElementById('qr-reader-results');
+        var lastResult, countResults = 0;
+        function onScanSuccess(decodedText, decodedResult) {
+            if (decodedText !== lastResult) {
+                ++countResults;
+                lastResult = decodedText;
+                // Handle on success condition with the decoded message.
+                var audio = new Audio('beep.wav');
+                audio.play().catch(function () {});
+                // console.log(`Scan result ${decodedText}`, decodedResult);
+                document.getElementById('qr-reader-results').textContent = decodedText;
+				document.getElementById("productSN").value = decodedText;
+				//App.init(decodedText);
+                
+            }
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+    });
+  </script>
+</body>
+</html>

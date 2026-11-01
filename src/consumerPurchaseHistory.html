@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Product Verify | Blockchain Project</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css"/>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/project.css" rel="stylesheet"/>
+</head>
+<body><nav class="project-nav"><a class="project-brand" href="index.html">PRODUCT<span>VERIFY</span></a><div class="project-links"><a href="index.html">Home</a><a href="manufacturer.html">Manufacturer</a><a href="seller.html">Seller</a><a href="consumer.html">Consumer</a><a href="confirmPurchase.html">Confirm Purchase</a></div></nav><header class="project-heading"><p class="eyebrow">BLOCKCHAIN PRODUCT RECORDS</p><h1>Purchase history</h1><p class="project-lead">View products linked to the connected wallet.</p></header>
+<div aria-live="polite" class="status-message" id="statusMessage" role="status"></div>
+<section class="ftco-section">
+<div class="container-fluid px-md-5">
+<div class="row justify-content-between">
+<div class="col-md-8 order-md-last">
+<div class="row">
+<div class="col-md-6 text-center">
+<a class="navbar-brand" href="index.html">Product Authenticity Tracker <span>through Blockchain</span></a>
+</div>
+<div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
+<form action="#" class="searchform order-lg-last">
+</form>
+</div>
+</div>
+</div>
+<div class="col-md-4 d-flex">
+<div class="social-media">
+</div>
+</div>
+</div>
+</div>
+
+<!-- END nav -->
+<section>
+<div class="container">
+<h2>Consumer Product History</h2>
+<div class="form-group">
+<p>Connect the wallet used when the product was purchased.</p>
+</div>
+<button class="btn btn-warning btn-register" id="register" type="submit">Get Products</button>
+</div>
+</section>
+</section>
+<section>
+<div class="container">
+<h2>Products purchased by consumer</h2>
+<table class="table">
+<thead>
+<tr>
+<th>Product SN</th>
+<th>Seller Code</th>
+<th>Manufacturer Code</th>
+</tr>
+</thead>
+<tbody id="logdata">
+</tbody>
+</table>
+<center><p>Your address is <b id="add"></b></p></center>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/chainConnection.js"></script>
+<script src="js/purchaseHistory.js"></script>
+</body>
+</html>

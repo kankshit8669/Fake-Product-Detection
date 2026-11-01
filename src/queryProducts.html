@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Product Verify | Blockchain Project</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css"/>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/project.css" rel="stylesheet"/>
+</head>
+<body><nav class="project-nav"><a class="project-brand" href="index.html">PRODUCT<span>VERIFY</span></a><div class="project-links"><a href="index.html">Home</a><a href="manufacturer.html">Manufacturer</a><a href="seller.html">Seller</a><a href="consumer.html">Consumer</a><a href="confirmPurchase.html">Confirm Purchase</a></div></nav><header class="project-heading"><p class="eyebrow">BLOCKCHAIN PRODUCT RECORDS</p><h1>Product records</h1><p class="project-lead">View stock assigned to a seller.</p></header>
+<div aria-live="polite" class="status-message" id="statusMessage" role="status"></div>
+
+<section>
+<div class="container">
+<h2>Products for sale with the seller</h2>
+<div class="form-group">
+<label for="name">Seller Code</label>
+<input class="form-control" id="sellerCode" name="sellerCode" placeholder="Enter Seller Code" type="text"/>
+</div>
+<button class="btn btn-warning btn-register" id="register" type="submit">Submit</button>
+</div>
+</section>
+<section>
+<div class="container">
+<h2>Product Details</h2>
+<table class="table">
+<thead>
+<tr>
+<th>Product ID</th>
+<th>Product Serial Number</th>
+<th>Product Name</th>
+<th>Product Brand</th>
+<th>Product Price</th>
+<th>Product Status</th>
+</tr>
+</thead>
+<tbody id="logdata">
+</tbody>
+</table>
+<center><p>Your address is <b id="add"></b></p></center>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/chainConnection.js"></script>
+<script src="js/sellerInventory.js"></script>
+</body>
+</html>

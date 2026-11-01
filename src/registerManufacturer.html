@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Register Manufacturer - Product Authenticity Tracker</title>
+<link href="css/bootstrap.min.css" rel="stylesheet"/><link href="css/project.css" rel="stylesheet"/></head>
+<body><nav class="project-nav"><a class="project-brand" href="index.html">PRODUCT<span>VERIFY</span></a><div class="project-links"><a href="index.html">Home</a><a href="manufacturer.html">Manufacturer</a><a href="seller.html">Seller</a><a href="consumer.html">Consumer</a><a href="confirmPurchase.html">Confirm Purchase</a></div></nav><header class="project-heading"><p class="eyebrow">BLOCKCHAIN PRODUCT RECORDS</p><h1>Register manufacturer</h1><p class="project-lead">Approve a manufacturer wallet for product registration.</p></header><main class="container" style="max-width:650px;padding-top:50px">
+<a href="manufacturer.html">Back to manufacturer menu</a><h2 class="mt-4">Register manufacturer</h2>
+<p>The wallet that deployed the contract must approve manufacturer accounts.</p>
+<div aria-live="polite" id="statusMessage" role="status"></div>
+<div class="form-group"><label for="ManufacturerCode">Manufacturer code</label>
+<input class="form-control" id="ManufacturerCode" maxlength="32" placeholder="e.g. BRAND01" type="text"/></div>
+<div class="form-group"><label for="ManufacturerWallet">Manufacturer wallet</label>
+<input class="form-control" id="ManufacturerWallet" placeholder="0x..." type="text"/></div>
+<button class="btn btn-primary btn-register" type="button">Register manufacturer</button>
+</main><script src="js/jquery.min.js"></script><script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script><script src="js/chainConnection.js"></script>
+<script src="js/registerManufacturer.js"></script></body></html>

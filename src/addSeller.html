@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Product Verify | Blockchain Project</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700" rel="stylesheet" type="text/css"/>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/project.css" rel="stylesheet"/>
+</head>
+<body><nav class="project-nav"><a class="project-brand" href="index.html">PRODUCT<span>VERIFY</span></a><div class="project-links"><a href="index.html">Home</a><a href="manufacturer.html">Manufacturer</a><a href="seller.html">Seller</a><a href="consumer.html">Consumer</a><a href="confirmPurchase.html">Confirm Purchase</a></div></nav><header class="project-heading"><p class="eyebrow">BLOCKCHAIN PRODUCT RECORDS</p><h1>Register a seller</h1><p class="project-lead">Link a seller ID to an Ethereum wallet address.</p></header>
+<div aria-live="polite" class="status-message" id="statusMessage" role="status"></div>
+
+<section>
+<div class="container">
+<h2>Add Seller</h2>
+<div>
+<table width="100%">
+<tr width="100%">
+<td align="center" width="15%">
+<label for="seller_id">Seller Name </label>
+</td>
+<td width="30%">
+<input class="form-control" id="SellerName" name="SellerName" type="text"/>
+</td>
+<td align="center" width="15">
+<label for="name">Seller Brand</label>
+</td>
+<td width="30%">
+<input class="form-control" id="SellerBrand" name="SellerBrand" type="text"/>
+</td>
+</tr>
+<tr width="100%">
+<td align="center" width="15%">
+<label for="username">Seller Code</label>
+</td>
+<td width="30%">
+<input class="form-control" id="SellerCode" name="SellerCode" type="text"/>
+</td>
+<td align="center" width="15">
+<label for="name">Seller Phone Number</label>
+</td>
+<td width="30%">
+<input class="form-control" id="SellerPhoneNumber" name="SellerPhoneNumber" type="text"/>
+</td>
+</tr>
+<tr width="100%">
+<td align="center" width="15%">
+<label for="username">Seller Manager</label>
+</td>
+<td width="30%">
+<input class="form-control" id="SellerManager" name="SellerManager" type="text"/>
+</td>
+<td align="center" width="15">
+<label for="name">Seller Address</label>
+</td>
+<td width="30%">
+<input class="form-control" id="SellerAddress" name="SellerAddress" type="text"/>
+</td>
+</tr>
+<tr width="100%">
+<td align="center" width="15%">
+<label for="username">Manufacturer ID</label>
+</td>
+<td width="30%">
+<input class="form-control" id="ManufacturerId" name="ManufacturerId" type="text"/>
+</td>
+</tr>
+<tr width="100%">
+<td align="center" width="15%"><label for="SellerWallet">Seller wallet address</label></td>
+<td colspan="3"><input class="form-control" id="SellerWallet" placeholder="0x..." required="" type="text"/></td>
+</tr>
+</table>
+</div>
+<div class="clear"> </div>
+<button class="btn btn-warning btn-register" id="register" type="submit">Add the Seller</button>
+</div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/chainConnection.js"></script>
+<script src="js/registerSeller.js"></script>
+</body>
+</html>
